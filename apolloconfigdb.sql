@@ -527,14 +527,14 @@ VALUES
 INSERT INTO `AppNamespace` (`Name`, `AppId`, `Format`, `IsPublic`, `Comment`)
 VALUES
   ('cloudpvp-dev.eureka.yml', 'public', 'yml', b'1', '全局服务注册配置'),
-  ('cloudpvp-dev.redis-config', 'public', 'yml', b'1', '全局Redis配置'),
+  ('cloudpvp-dev.redis-config.yml', 'public', 'yml', b'1', '全局Redis配置'),
   ('cloudpvp-dev.datasource.yml', 'public', 'yml', b'1', '全局数据源配置'),
-  ('application', 'auth', 'yml', b'0', ''),
-  ('application', 'gateway', 'yml', b'0', ''),
-  ('application', 'lobby', 'yml', b'0', ''),
-  ('application', 'play', 'yml', b'0', ''),
-  ('application', 'state', 'yml', b'0', ''),
-  ('application', 'user-summary', 'yml', b'0', '');
+  ('application.yml', 'auth', 'yml', b'0', ''),
+  ('application.yml', 'gateway', 'yml', b'0', ''),
+  ('application.yml', 'lobby', 'yml', b'0', ''),
+  ('application.yml', 'play', 'yml', b'0', ''),
+  ('application.yml', 'state', 'yml', b'0', ''),
+  ('application.yml', 'user-summary', 'yml', b'0', '');
 
 INSERT INTO `Cluster` (`Name`, `AppId`, `ParentClusterId`)
 VALUES 
@@ -549,14 +549,14 @@ VALUES
 INSERT INTO `Namespace` (`AppId`, `ClusterName`, `NamespaceName`) 
 VALUES 
   ('public', 'default', 'cloudpvp-dev.eureka.yml'),
-  ('public', 'default', 'cloudpvp-dev.redis-config'),
+  ('public', 'default', 'cloudpvp-dev.redis-config.yml'),
   ('public', 'default', 'cloudpvp-dev.datasource.yml'),
-  ('auth', 'default', 'application'),
-  ('gateway', 'default', 'application'),
-  ('lobby', 'default', 'application'),
-  ('play', 'default', 'application'),
-  ('state', 'default', 'application'),
-  ('user-summary', 'default', 'application');
+  ('auth', 'default', 'application.yml'),
+  ('gateway', 'default', 'application.yml'),
+  ('lobby', 'default', 'application.yml'),
+  ('play', 'default', 'application.yml'),
+  ('state', 'default', 'application.yml'),
+  ('user-summary', 'default', 'application.yml');
 
 INSERT INTO `item` VALUES (1, 2, 'content', 0, 'eureka:\n  client:\n    serviceUrl:\n      defaultZone: http://localhost:8080/eureka/', NULL, 1);
 INSERT INTO `item` VALUES (2, 3, 'content', 0, 'spring:\n  data:\n    redis:\n      repositories:\n        enabled: true\n      client-type: lettuce\n      timeout: 10000ms\n      lettuce:\n        pool:\n          max-active : 8\n          max-wait: 1000ms\n          max-idle: 200\n          min-idle: 5', NULL, 1);
